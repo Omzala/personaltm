@@ -1,35 +1,11 @@
 import dotenv from 'dotenv';
-import express from 'express';
-import cors from 'cors';
 import { connectDb } from './src/config/db.js';
-import authRoutes from './src/routes/authRoutes.js';
-import reportRoutes from './src/routes/reportRoutes.js';
+import { createApp } from './src/app.js';
 
 dotenv.config(); // Load environment variables from .env
 
-
-const app = express();
+const app = createApp();
 const port = process.env.PORT || 5000;
-
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
-  credentials: true
-}));
-app.use(express.json({ limit: '1mb' }));
-
-app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, service: '9to5wrapped-server' });
-});
-
-app.use('/api/auth', authRoutes);
-app.use('/api/reports', reportRoutes);
-
-app.use((err, _req, res, _next) => {
-  console.error(err);
-  res.status(err.status || 500).json({
-    message: err.message || 'Something went wrong'
-  });
-});
 
 connectDb()
   .then(() => {

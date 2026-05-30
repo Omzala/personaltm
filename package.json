@@ -2,6 +2,7 @@
   "name": "9to5wrapped",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "MERN app for 9to5Wrapped role-aware daily report generation.",
   "engines": {
     "node": ">=20"

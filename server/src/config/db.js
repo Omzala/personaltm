@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+let connectionPromise;
+
 export async function connectDb() {
   const uri = process.env.MONGODB_URI;
 
@@ -7,6 +9,12 @@ export async function connectDb() {
     throw new Error('MONGODB_URI is required');
   }
 
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
+  }
+
   mongoose.set('strictQuery', true);
-  await mongoose.connect(uri);
+  connectionPromise ||= mongoose.connect(uri);
+  await connectionPromise;
+  return mongoose.connection;
 }

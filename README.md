@@ -47,6 +47,34 @@ npm run dev
 
 The client runs on `http://localhost:5173` and the server runs on `http://localhost:5000`.
 
+## Vercel Deployment
+
+The repo is configured for Vercel with `vercel.json`.
+
+- Build command: `npm run build`
+- Install command: `npm run install:all`
+- Output directory: `client/dist`
+- API routes: `/api/*` are handled by `api/index.js`
+
+Add these environment variables in Vercel Project Settings:
+
+```bash
+MONGODB_URI=your-mongodb-atlas-uri
+JWT_SECRET=your-long-random-secret
+GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
+GEMINI_API_KEY=your-gemini-api-key
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+Optional:
+
+```bash
+CLIENT_URL=https://your-production-domain.vercel.app
+VITE_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com
+```
+
+Do not set `VITE_API_URL` on Vercel unless the API is deployed somewhere else. When it is unset, the client uses same-origin `/api`.
+
 ## AI Notes
 
 Set `GEMINI_API_KEY` in `server/.env` to enable live AI generation. Optionally set `GEMINI_MODEL` to override the default Gemini model. If no key is present, the server returns a deterministic polished fallback so the app remains usable during development.
