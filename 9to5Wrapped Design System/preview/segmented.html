@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:26px 28px;display:grid;gap:16px;max-width:420px}
+  .segmented{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:var(--surface-2);
+    border:1px solid var(--border);border-radius:12px}
+  .segmented button{border:0;border-radius:9px;background:transparent;padding:11px 14px;color:var(--text-3);
+    font-weight:700;font-size:0.9rem;font-family:inherit}
+  .segmented .active{background:var(--btn-primary-bg);color:var(--btn-primary-fg);box-shadow:var(--shadow-sm)}
+</style></head>
+<body class="surface-grid">
+  <div class="segmented"><button class="active">Sign in</button><button>Sign up</button></div>
+</body></html>

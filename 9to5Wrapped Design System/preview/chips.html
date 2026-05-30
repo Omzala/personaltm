@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:24px 28px;display:grid;gap:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border);border-radius:100px;
+    padding:6px 13px;background:var(--surface-2);color:var(--text-2);font-size:0.83rem;font-weight:650}
+  .chip.active{background:rgba(35,213,171,0.1);border-color:var(--teal);color:var(--text)}
+  .tag{padding:5px 13px;background:var(--surface-2);border:1px solid var(--border);border-radius:100px;
+    font-size:0.8rem;font-weight:700;color:var(--text-2)}
+</style></head>
+<body class="surface-grid">
+  <div class="chips">
+    <span class="chip active"><i data-lucide="check" style="width:14px;color:var(--teal)"></i>Title</span>
+    <span class="chip active"><i data-lucide="check" style="width:14px;color:var(--teal)"></i>Status</span>
+    <span class="chip">Priority</span>
+    <span class="chip">Category</span>
+    <span class="chip">Blocker</span>
+  </div>
+  <div class="chips">
+    <span class="tag">AI-powered</span><span class="tag">Role-aware</span>
+    <span class="tag">Export to CSV</span><span class="tag">5 min setup</span>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body></html>

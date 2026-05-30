@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{border:0;border-radius:10px;min-height:42px;display:inline-flex;align-items:center;justify-content:center;
+    gap:8px;font-weight:750;font-size:0.9rem;padding:0 18px}
+  .primary{background:var(--btn-primary-bg);color:var(--btn-primary-fg);box-shadow:0 0 16px rgba(0,255,135,0.45),0 4px 14px rgba(0,0,0,0.4)}
+  .secondary{background:var(--btn-secondary-bg);color:var(--btn-secondary-fg);box-shadow:0 0 12px rgba(255,0,128,0.3)}
+  .ghost{background:var(--btn-ghost-bg);color:var(--btn-ghost-fg)}
+  .icon{width:42px;padding:0;background:var(--btn-icon-bg);color:var(--btn-icon-fg)}
+  .danger{background:var(--btn-danger-bg);color:var(--btn-danger-fg)}
+</style></head>
+<body class="surface-grid">
+  <button class="btn primary"><i data-lucide="sparkles" style="width:17px"></i>Generate report</button>
+  <button class="btn secondary"><i data-lucide="plus" style="width:17px"></i>Add task</button>
+  <button class="btn ghost"><i data-lucide="file-plus-2" style="width:17px"></i>New</button>
+  <button class="btn icon"><i data-lucide="copy" style="width:17px"></i></button>
+  <button class="btn icon danger"><i data-lucide="trash-2" style="width:17px"></i></button>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body></html>

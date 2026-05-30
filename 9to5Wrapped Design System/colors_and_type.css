@@ -1,0 +1,290 @@
+/* ================================================================
+   9to5Wrapped — Foundations: Color + Type
+   "You do the work, the app does the talking."
+   ----------------------------------------------------------------
+   Single source of truth for color tokens (light + dark) and the
+   typographic scale. Load this first; everything else builds on it.
+
+   Fonts: Inter (UI / display) + Fira Code (report output / mono).
+   Both pulled from Google Fonts in the kits. Drop self-hosted woff2
+   into /fonts and swap the @import if you need offline use.
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* ──────────────────────────────────────────────────────────────
+   1. LIGHT THEME (default) — "warm cream + ink"
+   ────────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --bg:             #f4f5ea;   /* warm cream paper */
+  --surface:        #ffffff;
+  --surface-2:      #f0f1e8;
+  --surface-3:      #e6e8db;
+  --surface-input:  #fafbf4;
+  --surface-glass:  rgba(255, 255, 255, 0.68);   /* panels */
+
+  /* Borders */
+  --border:         rgba(20, 21, 31, 0.10);
+  --border-hover:   rgba(20, 21, 31, 0.22);
+
+  /* Text */
+  --text:           #12131c;   /* ink */
+  --text-2:         #4a4d5a;
+  --text-3:         #686b76;
+  --text-label:     #2e303a;
+
+  /* Accent palette — playful, saturated */
+  --pink:           #ff4d6d;
+  --teal:           #23d5ab;
+  --lime:           #b8f563;
+  --yellow:         #ffd166;
+  --purple:         #8b5cf6;
+
+  /* Semantic accents */
+  --accent:         var(--pink);
+  --accent-2:       var(--teal);
+  --focus-ring:     rgba(255, 77, 109, 0.2);
+  --focus-border:   var(--pink);
+
+  /* Status */
+  --status-active:  var(--teal);
+  --status-danger:  var(--pink);
+  --status-warn:    var(--yellow);
+  --status-neutral: #a0a4ad;
+
+  /* Buttons */
+  --btn-primary-bg:   #12131c;   /* ink-filled */
+  --btn-primary-fg:   #ffffff;
+  --btn-secondary-bg: var(--lime);
+  --btn-secondary-fg: #12131c;
+  --btn-ghost-bg:     rgba(20, 21, 31, 0.06);
+  --btn-ghost-fg:     #2e303a;
+  --btn-icon-bg:      #e6e8db;
+  --btn-icon-fg:      #2e303a;
+  --btn-danger-bg:    #fff0f3;
+  --btn-danger-fg:    #b51f41;
+
+  /* Chrome */
+  --topbar-bg:  rgba(244, 245, 234, 0.85);
+  --output-bg:  #12131c;   /* report console */
+  --output-fg:  #e8ffcc;
+
+  /* Glow color used by .glow-card spotlight (R,G,B) */
+  --glow-rgb: 132, 0, 255;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(20, 21, 31, 0.07);
+  --shadow-md: 0 8px 24px rgba(20, 21, 31, 0.10);
+  --shadow-lg: 0 22px 50px rgba(20, 21, 31, 0.12);
+
+  /* Radii */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-xl: 16px;
+  --r-2xl: 18px;
+  --r-pill: 100px;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Easing */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Transition tokens */
+  --t-fast: 120ms var(--ease-in-out);
+  --t-base: 220ms var(--ease-out);
+  --t-slow: 380ms var(--ease-out);
+
+  /* Type families */
+  --font-sans:    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Unbounded", "Inter", ui-sans-serif, system-ui, sans-serif;  /* cool, gen-z headlines */
+  --font-serif:   "Playfair Display", Georgia, "Times New Roman", serif;          /* editorial body / pull-quotes */
+  --font-mono:    "Fira Code", "Cascadia Code", "SF Mono", Consolas, monospace;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2. DARK THEME — "near-black + neon"
+   Toggle by setting  data-theme="dark"  on <html> or any wrapper.
+   ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:             #07070f;
+  --surface:        rgba(10, 10, 24, 0.55);
+  --surface-2:      rgba(16, 16, 36, 0.60);
+  --surface-3:      rgba(22, 22, 44, 0.65);
+  --surface-input:  rgba(255, 255, 255, 0.07);
+  --surface-select: #16162e;
+  --surface-glass:  rgba(8, 8, 22, 0.58);
+
+  --border:         rgba(255, 255, 255, 0.07);
+  --border-hover:   rgba(0, 255, 135, 0.35);
+
+  --text:           #eeeeff;
+  --text-2:         #8888b8;
+  --text-3:         #505070;
+  --text-label:     #c0c0e8;
+
+  /* Neon palette */
+  --pink:   #ff0080;
+  --teal:   #00ff87;
+  --lime:   #00d4ff;   /* re-cast as electric cyan */
+  --yellow: #ffcc00;
+  --purple: #c084fc;
+
+  --accent:       var(--teal);
+  --accent-2:     var(--pink);
+  --focus-ring:   rgba(0, 255, 135, 0.2);
+  --focus-border: var(--teal);
+
+  --status-active:  #00ff87;
+  --status-danger:  #ff0080;
+  --status-warn:    #ffcc00;
+  --status-neutral: #2a2a4a;
+
+  --btn-primary-bg:   var(--teal);
+  --btn-primary-fg:   #07070f;
+  --btn-secondary-bg: var(--pink);
+  --btn-secondary-fg: #ffffff;
+  --btn-ghost-bg:     rgba(255, 255, 255, 0.06);
+  --btn-ghost-fg:     var(--text-2);
+  --btn-icon-bg:      rgba(255, 255, 255, 0.07);
+  --btn-icon-fg:      var(--text-2);
+  --btn-danger-bg:    rgba(255, 0, 128, 0.12);
+  --btn-danger-fg:    var(--pink);
+
+  --topbar-bg: rgba(7, 7, 15, 0.90);
+  --output-bg: #020208;
+  --output-fg: #00ff87;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 255, 135, 0.04);
+  --shadow-lg: 0 22px 50px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0, 255, 135, 0.06);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. BASE
+   ────────────────────────────────────────────────────────────── */
+:root {
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The signature grid-paper backdrop. Apply to body / app shell. */
+.surface-grid {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(90deg,  var(--border) 1px, transparent 1px),
+    linear-gradient(180deg, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   4. TYPE SCALE  (semantic classes — pair with --font-sans)
+   Headings are heavy (800–900) + tight tracking. Body is calm.
+   ────────────────────────────────────────────────────────────── */
+.t-display {            /* hero / auth headline */
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.t-h1 {                 /* page title */
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.t-h2 {                 /* panel title */
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.t-h3 {                 /* card / metric heading */
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.t-body {
+  font-size: 1.04rem;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--text-2);
+}
+
+.t-body-sm {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.t-label {              /* form labels / strong meta */
+  font-size: 0.87rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  color: var(--text-label);
+}
+
+.t-button {
+  font-size: 0.9rem;
+  font-weight: 750;
+  letter-spacing: 0.005em;
+}
+
+.t-eyebrow {            /* small caps section label */
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.t-meta {               /* muted helper text */
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.t-mono {               /* report console */
+  font-family: var(--font-mono);
+  font-size: 0.81rem;
+  line-height: 1.62;
+}
+
+/* Gradient ink→accent text treatment used on big headlines */
+.t-gradient {
+  background: linear-gradient(140deg, var(--text) 45%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="dark"] .t-gradient {
+  background: linear-gradient(140deg, var(--text) 45%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

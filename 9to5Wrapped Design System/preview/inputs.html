@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:24px 28px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px}
+  label{display:grid;gap:6px;color:var(--text-label);font-size:0.87rem;font-weight:750}
+  input,select{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:11px 12px;
+    background:var(--surface-input);color:var(--text);outline:none;font:inherit}
+  .focused{border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring)}
+  span.full{grid-column:1/-1}
+</style></head>
+<body class="surface-grid">
+  <div class="grid">
+    <label>Role<input placeholder="Senior Engineer" class="focused"></label>
+    <label>Seniority<select><option>Senior</option></select></label>
+    <label class="full">Focus question<input placeholder="What should this report answer?"></label>
+  </div>
+</body></html>

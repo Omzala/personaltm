@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9to5Wrapped — Brand Mark</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    padding: 36px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .brand-icon {
+    width: 52px; height: 52px;
+    display: grid; place-items: center;
+    background: var(--accent);
+    color: var(--btn-primary-fg);
+    border-radius: 14px;
+  }
+  .brand-icon.sm { width: 36px; height: 36px; border-radius: 10px; }
+  .wordmark { display: grid; gap: 1px; }
+  .wordmark strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+  .wordmark span { font-size: 0.8rem; color: var(--text-3); font-weight: 500; }
+  [data-theme="dark"] .brand-icon { box-shadow: 0 0 16px rgba(0,255,135,0.5); }
+  .panel { padding: 28px 32px; border-radius: 18px; background: var(--surface-glass);
+           backdrop-filter: blur(20px); border: 1px solid var(--border); }
+  [data-theme="dark"] .panel { background: rgba(8,8,22,0.58); border-color: rgba(255,255,255,0.06); }
+</style>
+</head>
+<body class="surface-grid">
+  <div class="panel">
+    <div class="lockup">
+      <div class="brand-icon"><i data-lucide="file-text" style="width:24px;height:24px"></i></div>
+      <div class="wordmark"><strong>9to5Wrapped</strong><span>Daily reports, on autopilot</span></div>
+    </div>
+  </div>
+  <div data-theme="dark" class="panel">
+    <div class="lockup">
+      <div class="brand-icon sm"><i data-lucide="file-text" style="width:18px;height:18px"></i></div>
+      <div class="wordmark"><strong>9to5Wrapped</strong><span>Senior Engineer</span></div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

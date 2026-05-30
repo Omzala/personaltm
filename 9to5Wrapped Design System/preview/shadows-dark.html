@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:32px 30px}
+  .row{display:flex;gap:28px}
+  .card{flex:1;height:88px;background:#0c0c1e;border-radius:14px;display:grid;place-items:center;
+    font-size:0.78rem;font-weight:700;color:#8888b8;border:1px solid var(--border)}
+  .md{box-shadow:var(--shadow-md)} .lg{box-shadow:var(--shadow-lg)}
+  .glow{box-shadow:0 0 18px rgba(0,255,135,0.4),0 0 40px rgba(0,255,135,0.18);color:#00ff87}
+</style></head>
+<body class="surface-grid">
+  <div class="row">
+    <div class="card md">shadow-md + ring</div>
+    <div class="card lg">shadow-lg + ring</div>
+    <div class="card glow">neon bloom (hover)</div>
+  </div>
+</body></html>

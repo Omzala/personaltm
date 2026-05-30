@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:24px 30px;color:var(--text)}
+  .cap{font-family:var(--font-serif);font-style:italic;font-size:0.95rem;color:var(--text-2);margin-bottom:12px}
+  .console{background:var(--output-bg);color:var(--output-fg);border-radius:12px;padding:18px 20px;
+    border:1px solid rgba(255,255,255,0.05)}
+  .console h4{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;margin:0 0 10px;color:#fff}
+  .row{display:flex;justify-content:space-between;gap:16px;padding:6px 0;border-bottom:1px solid rgba(232,255,204,0.12);
+    font-family:var(--font-serif);font-size:0.98rem}
+  .row:last-child{border-bottom:0}
+  .row .t{flex:1} .row .m{opacity:0.7;font-style:italic;white-space:nowrap}
+</style></head>
+<body class="surface-grid">
+  <div class="cap">Report rendered with an editorial serif voice — Playfair Display</div>
+  <div class="console">
+    <h4>Daily report — May 30</h4>
+    <div class="row"><span class="t">Ship the new auth flow</span><span class="m">3 hr · Done</span></div>
+    <div class="row"><span class="t">Fix carryover bug</span><span class="m">45 min · In progress</span></div>
+    <div class="row"><span class="t">Sprint planning</span><span class="m">1 hr · Done</span></div>
+  </div>
+</body></html>

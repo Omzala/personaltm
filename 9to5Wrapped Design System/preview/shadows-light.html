@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:32px 30px}
+  .row{display:flex;gap:28px}
+  .card{flex:1;height:88px;background:var(--surface);border-radius:14px;display:grid;place-items:center;
+    font-size:0.78rem;font-weight:700;color:var(--text-2)}
+  .sm{box-shadow:var(--shadow-sm)} .md{box-shadow:var(--shadow-md)} .lg{box-shadow:var(--shadow-lg)}
+</style></head>
+<body class="surface-grid">
+  <div class="row">
+    <div class="card sm">shadow-sm</div>
+    <div class="card md">shadow-md</div>
+    <div class="card lg">shadow-lg</div>
+  </div>
+</body></html>

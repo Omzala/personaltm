@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:24px 28px}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:100px;
+    background:var(--surface-2);border:1.5px solid var(--border);font-size:0.82rem;font-weight:650;color:var(--text-2)}
+  .dot{width:11px;height:11px;border-radius:50%}
+</style></head>
+<body class="surface-grid">
+  <div class="row">
+    <span class="pill"><span class="dot" style="background:var(--teal)"></span>Done / In progress</span>
+    <span class="pill"><span class="dot" style="background:var(--pink)"></span>Blocked / Waiting</span>
+    <span class="pill"><span class="dot" style="background:var(--yellow)"></span>Planned / Carried over</span>
+    <span class="pill"><span class="dot" style="background:var(--status-neutral)"></span>Skipped</span>
+    <span class="pill"><span class="dot" style="background:var(--purple)"></span>Glow accent</span>
+  </div>
+</body></html>

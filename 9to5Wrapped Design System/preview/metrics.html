@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--bg);padding:22px 28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .metric{min-height:68px;display:grid;grid-template-columns:22px 1fr;align-content:center;gap:3px 10px;
+    border:1px solid var(--border);border-radius:12px;padding:12px 16px;background:var(--surface)}
+  .metric i{color:var(--accent);grid-row:span 2;align-self:center}
+  .metric strong{font-size:1.12rem;font-weight:900;color:var(--text)}
+  .metric span{font-size:0.8rem;color:var(--text-3);font-weight:500}
+  .ring{--score:68%;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;align-content:center;gap:2px;
+    background:radial-gradient(circle at center,var(--surface) 60%,transparent 62%),conic-gradient(var(--teal) var(--score),var(--surface-2) 0)}
+  .ring strong{font-size:1.1rem;font-weight:900;color:var(--text);line-height:1}
+  .ring span{font-size:0.8rem;color:var(--text-3)}
+</style></head>
+<body class="surface-grid">
+  <div class="ring"><strong>68%</strong><span>done</span></div>
+  <div class="metric"><i data-lucide="list-checks" style="width:18px"></i><strong>12</strong><span>tasks</span></div>
+  <div class="metric"><i data-lucide="sparkles" style="width:18px"></i><strong>8</strong><span>finished</span></div>
+  <div class="metric"><i data-lucide="alarm-clock" style="width:18px"></i><strong>2</strong><span>blocked</span></div>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body></html>
