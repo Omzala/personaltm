@@ -75,6 +75,10 @@ router.post('/google', async (req, res, next) => {
       return res.status(400).json({ message: 'Google credential is required' });
     }
 
+    if (!process.env.GOOGLE_CLIENT_ID) {
+      return res.status(500).json({ message: 'Google sign-in is not configured on the server' });
+    }
+
     const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
     const ticket = await googleClient.verifyIdToken({
       idToken: credential,
@@ -109,9 +113,10 @@ router.post('/google', async (req, res, next) => {
       user: publicUser(user)
     });
   } catch (error) {
-    error.status = 401;
-    error.message = 'Google sign-in failed';
-    next(error);
+    console.error('Google sign-in verification error:', error);
+    const authError = new Error('Google sign-in failed. Check that this domain is allowed for the Google OAuth client.');
+    authError.status = 401;
+    next(authError);
   }
 });
 
